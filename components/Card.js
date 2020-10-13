@@ -4,7 +4,7 @@ import { TouchableOpacity, Platform, Image, StyleSheet, View } from 'react-nativ
 import InfoRow from './InfoRow';
 
 /*
-    A PizzaCard has the name, image, and price of a pizza. UPDATE BEFORE MERGING.
+    A Card has the name, image, and price of a pizza. UPDATE BEFORE MERGING.
 */
 export default class Card extends React.Component {
     render() {

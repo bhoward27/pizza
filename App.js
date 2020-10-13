@@ -8,7 +8,8 @@ import hawaiianImage from './assets/hawaiian.jpg';
 import mediterraneanImage from './assets/mediterranean.jpg';
 
 /*
-  Currently, App displays just a lone Card of a pepperoni pizza. UPDATE BEFORE MERGING.
+  Displays three Cards, each of which shows a picture of a pizza, its name, and price.
+  UPDATE BEFORE MERGING.
 */
 export default function App() {
   return (
