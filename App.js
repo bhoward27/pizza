@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
+import Constants from 'expo-constants';
 
 import PizzaCard from './components/PizzaCard';
 
@@ -10,7 +11,7 @@ import PizzaCard from './components/PizzaCard';
 export default function App() {
   return (
     <View style={styles.container}>
-      <PizzaCard style={styles.pizzacard} />
+      <PizzaCard/>
     </View>
   );
 }
@@ -19,6 +20,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
+    marginTop: Constants.statusBarHeight,
   },
   pizzacard: {
     flex: 1,
