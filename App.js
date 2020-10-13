@@ -1,12 +1,23 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Platform, StyleSheet, Text, View } from 'react-native';
+import Constants from 'expo-constants';
 
+import PizzaCard from './components/PizzaCard';
+import pepperoniImage from './assets/pepperoni.jpg';
+
+/*
+  Currently, App displays just a lone PizzaCard of a pepperoni pizza. UPDATE BEFORE MERGING.
+*/
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your aPp!</Text>
-      <StatusBar style="auto" />
+      <PizzaCard
+        style={styles.pizzaCard}
+        image={pepperoniImage}
+        name="Pepperoni Pizza"
+        price="$15.99" //price of a medium pizza.
+      />
     </View>
   );
 }
@@ -14,8 +25,14 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'white',
+    marginTop: Constants.statusBarHeight,
+  },
+  pizzaCard: {
+    backgroundColor: 'white',
+
+    //  This tells it how to distribute its CHILDREN along (in this case) the x-axis 
+    //  (secondary axis).
     alignItems: 'center',
-    justifyContent: 'center',
   },
 });
