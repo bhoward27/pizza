@@ -28,6 +28,9 @@ const styles = StyleSheet.create({
   },
   pizzaCard: {
     backgroundColor: 'white',
-    alignItems: 'center', //this tells it how to distribute its CHILDREN
+
+    //  This tells it how to distribute its CHILDREN along (in this case) the x-axis 
+    //  (secondary axis).
+    alignItems: 'center',
 },
 });
