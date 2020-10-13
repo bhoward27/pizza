@@ -1,18 +1,24 @@
 import React from 'react';
 import { Image, StyleSheet, View } from 'react-native';
 
+import InfoRow from './InfoRow';
+
 /*
     Class-level comment --- MAKE SURE TO UPDATE WHEN DONE
 */
 export default class PizzaCard extends React.Component {
     render() {
-        const { style, image } = this.props;
+        const { style, image, name, price } = this.props;
 
         return (
             <View style={style}>
                 <Image
                     style={styles.image}
                     source={image}
+                />
+                <InfoRow
+                    name={name}
+                    price={price}
                 />
             </View>
         );

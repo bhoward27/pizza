@@ -16,12 +16,18 @@ export default function InfoRow({ name, price }) {
 
 const styles = StyleSheet.create({
     container: {
-
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingHorizontal: 6,
+        height: 30,
     },
     name: {
+        marginHorizontal: 55,
         color: 'black',
     },
     price: {
+        marginHorizontal: 55,
         color: 'green',
     }
 });

@@ -15,6 +15,8 @@ export default function App() {
       <PizzaCard
         style={styles.pizzaCard}
         image={pepperoniImage}
+        name="Pepperoni Pizza"
+        price="$15.99" //price of a medium pizza.
       />
     </View>
   );
