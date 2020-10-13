@@ -6,13 +6,13 @@ import { Image, StyleSheet, View } from 'react-native';
 */
 export default class PizzaCard extends React.Component {
     render() {
-        //const style = this.props;
+        const { style, image } = this.props;
 
         return (
-            <View style={styles.container}>
+            <View style={style}>
                 <Image
-                    style={styles.image} 
-                    source={require('../assets/pepperoni.jpg')}
+                    style={styles.image}
+                    source={image}
                 />
             </View>
         );
@@ -21,15 +21,8 @@ export default class PizzaCard extends React.Component {
 
 const styles = StyleSheet.create({
     image: {
-        //resizeMode: 'center',
         height: 300,
         width: 300,
-        // aspectRatio: 1,
         backgroundColor: 'grey',
-    },
-    container: {
-        //alignItems: 'stretch',
-        backgroundColor: 'white',
-        alignItems: 'center', //this tells it how to distribute its CHILDREN
     },
 });
