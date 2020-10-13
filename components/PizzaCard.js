@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, StyleSheet, View } from 'react-native';
+import { Platform, Image, StyleSheet, View } from 'react-native';
 
 import InfoRow from './InfoRow';
 
@@ -26,6 +26,7 @@ export default class PizzaCard extends React.Component {
 
 const styles = StyleSheet.create({
     image: {
+        marginHorizontal: Platform.OS === 'ios' ? 38 : 55,
         height: 300,
         width: 300,
         backgroundColor: 'grey',
