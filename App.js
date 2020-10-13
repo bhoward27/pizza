@@ -7,7 +7,7 @@ import PizzaCard from './components/PizzaCard';
 import pepperoniImage from './assets/pepperoni.jpg';
 
 /*
-  Class-level comment. Update at the end.
+  Currently, App displays just a lone PizzaCard of a pepperoni pizza. UPDATE BEFORE MERGING.
 */
 export default function App() {
   return (
@@ -34,5 +34,5 @@ const styles = StyleSheet.create({
     //  This tells it how to distribute its CHILDREN along (in this case) the x-axis 
     //  (secondary axis).
     alignItems: 'center',
-},
+  },
 });

@@ -4,12 +4,11 @@ import { Image, StyleSheet, View } from 'react-native';
 import InfoRow from './InfoRow';
 
 /*
-    Class-level comment --- MAKE SURE TO UPDATE WHEN DONE
+    A PizzaCard has the name, image, and price of a pizza. UPDATE BEFORE MERGING.
 */
 export default class PizzaCard extends React.Component {
     render() {
         const { style, image, name, price } = this.props;
-
         return (
             <View style={style}>
                 <Image

@@ -1,6 +1,10 @@
 import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 
+/*
+    An InfoRow is a row containing the name and price of a pizza, to be displayed below the image
+    on a PizzaCard. UPDATE BEFORE MERGING. 
+*/
 export default function InfoRow({ name, price }) {
     return (
         <View style={styles.container}>
