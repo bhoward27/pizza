@@ -1,16 +1,16 @@
 import React from 'react';
-import { Image, StyleSheet, View } from 'react-native';
+import { TouchableOpacity, Platform, Image, StyleSheet, View } from 'react-native';
 
 import InfoRow from './InfoRow';
 
 /*
-    A PizzaCard has the name, image, and price of a pizza. UPDATE BEFORE MERGING.
+    A Card has the name, image, and price of a pizza. UPDATE BEFORE MERGING.
 */
-export default class PizzaCard extends React.Component {
+export default class Card extends React.Component {
     render() {
         const { style, image, name, price } = this.props;
         return (
-            <View style={style}>
+            <TouchableOpacity style={style}>
                 <Image
                     style={styles.image}
                     source={image}
@@ -19,13 +19,14 @@ export default class PizzaCard extends React.Component {
                     name={name}
                     price={price}
                 />
-            </View>
+            </TouchableOpacity>
         );
     }
 }
 
 const styles = StyleSheet.create({
     image: {
+        marginHorizontal: Platform.OS === 'ios' ? 38 : 55,
         height: 300,
         width: 300,
         backgroundColor: 'grey',
