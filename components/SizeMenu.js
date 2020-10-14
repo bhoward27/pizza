@@ -1,25 +1,50 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { RadioButton } from 'react-native-paper';
+import { Picker } from '@react-native-community/picker';
 
 /*
     Class-level comment. UPDATE BEFORE MERGING.
 */
-export default function SizeMenu({ mediumPrice }) {
-    const [checked, setChecked] = React.useState('medium');
-    return (
-        <RadioButton
-            style={styles.radioButton}
-            value='small'
-            status={checked === 'small' ? 'checked' : 'unchecked'}
-            onPress={() => setChecked('small')}
-        ></RadioButton>
-    );
+export default class SizeMenu extends React.Component {
+    state = {
+        price: this.props.mediumPrice,
+    };
+    
+    render() {
+        const { price } = this.state;
+        const { mediumPrice } = this.props;
+        const PRICE_DIFFERENCE = 2;
+        const SMALL_PRICE = mediumPrice - PRICE_DIFFERENCE;
+        const LARGE_PRICE = mediumPrice + PRICE_DIFFERENCE;
+        const SEPARATOR = " --- $";
+
+        return (
+            <Picker
+                style={styles.container}
+                selectedValue={price}
+                onValueChange={(itemValue, itemIndex) => this.setState({price: itemValue})}
+            >
+                <Picker.Item
+                    value={SMALL_PRICE}
+                    label={"Small" + SEPARATOR + SMALL_PRICE}
+                />
+                <Picker.Item
+                    label={"Medium" + SEPARATOR + mediumPrice}
+                    value={mediumPrice}
+                />
+                <Picker.Item
+                    label={"Large" + SEPARATOR + LARGE_PRICE}
+                    value={LARGE_PRICE}
+                />
+            </Picker>
+
+        );
+    }
 }
 
 const styles = StyleSheet.create({
-    radioButton: {
-        flex: 1,
-        backgroundColor: 'purple',
-    },
+   container: {
+       height: 50,
+       width: 300,
+   },
 });

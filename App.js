@@ -25,7 +25,15 @@ export default class App extends React.Component {
       selectedName: name,
       selectedPrice: price,
     });
-  }
+  };
+  closeOrderScreen = () => {
+    this.setState({
+      showModal: false,
+      selectedImage: null,
+      selectedName: null,
+      selectedPrice: null,
+    });
+  };
 
   render() {
     const { showModal, selectedImage, selectedName, selectedPrice } = this.state;
@@ -37,12 +45,14 @@ export default class App extends React.Component {
         <Modal
           visible={showModal}
           animationType="slide"
+          onRequestClose={this.closeOrderScreen}
         >
           <Order 
             style={styles.order}
             name={selectedName}
             image={selectedImage}
             price={selectedPrice}
+            onPressClose={this.closeOrderScreen}
           ></Order>
         </Modal>
         {/* <SizeMenu mediumPrice={9.99} ></SizeMenu> */}
@@ -63,6 +73,6 @@ const styles = StyleSheet.create({
   order: {
     backgroundColor: 'white',
     flex: 1,
-    marginTop: Constants.statusBarHeight,
+    marginTop: Platform.OS === 'ios' ? Constants.statusBarHeight : 0,
 },
 });

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, Button, Text } from 'react-native';
 
 import OrderHeader from '../components/OrderHeader';
 import SizeMenu from '../components/SizeMenu';
@@ -9,14 +9,19 @@ import SizeMenu from '../components/SizeMenu';
 */
 export default class Order extends React.Component {
     render() {
-        const { style, image, name, price } = this.props;
+        const { style, image, name, price, onPressClose } = this.props;
         return (
             <View style={style}>
                 <OrderHeader 
                     image={image}
                     name={name}
                 ></OrderHeader>
-                {/* <SizeMenu mediumPrice={price} ></SizeMenu> */}
+                <SizeMenu mediumPrice={price} ></SizeMenu>
+                <Button
+                    style={styles.closeButton}
+                    onPress={onPressClose}
+                    title={"Close"}
+                />
             </View>
         );
     }
@@ -25,5 +30,8 @@ export default class Order extends React.Component {
 const styles = StyleSheet.create({
     text: {
         flex: 1,
+    },
+    closeButton: {
+
     },
 });
