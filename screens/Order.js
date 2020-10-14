@@ -3,6 +3,7 @@ import { View, StyleSheet, Button, Text } from 'react-native';
 
 import OrderHeader from '../components/OrderHeader';
 import SizeMenu from '../components/SizeMenu';
+import TotalRow from '../components/TotalRow';
 
 /*
     Class-level comment. UPDATE BEFORE MERGING.
@@ -17,10 +18,12 @@ export default class Order extends React.Component {
                     name={name}
                 ></OrderHeader>
                 <SizeMenu mediumPrice={price} ></SizeMenu>
+                <TotalRow tax={0.12} subtotal={20.99}></TotalRow>
                 <Button
                     style={styles.closeButton}
                     onPress={onPressClose}
-                    title={"Close"}
+                    title={"Close Window"}
+                    color={styles.closeButton.color}
                 />
             </View>
         );
@@ -32,6 +35,7 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     closeButton: {
-
+        color: 'red',
+        //justifyContent: 'flex-end',
     },
 });

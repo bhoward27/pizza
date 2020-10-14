@@ -14,14 +14,21 @@ export default class SizeMenu extends React.Component {
         const { price } = this.state;
         const { mediumPrice } = this.props;
         const PRICE_DIFFERENCE = 2;
-        const SMALL_PRICE = mediumPrice - PRICE_DIFFERENCE;
-        const LARGE_PRICE = mediumPrice + PRICE_DIFFERENCE;
+        const PRECISION = 2;
+        const PRECISION_FACTOR = Math.pow(10, PRECISION);
+        const SMALL_PRICE = Math.round((mediumPrice - PRICE_DIFFERENCE) * PRECISION_FACTOR) 
+                                    / PRECISION_FACTOR;
+        const LARGE_PRICE = Math.round((mediumPrice + PRICE_DIFFERENCE) * PRECISION_FACTOR)
+                                    / PRECISION_FACTOR;
         const SEPARATOR = " --- $";
 
         return (
+            <View style={styles.container}>
             <Picker
                 style={styles.container}
                 selectedValue={price}
+                
+                //  Need to pass this function down from app.
                 onValueChange={(itemValue, itemIndex) => this.setState({price: itemValue})}
             >
                 <Picker.Item
@@ -37,6 +44,7 @@ export default class SizeMenu extends React.Component {
                     value={LARGE_PRICE}
                 />
             </Picker>
+            </View>
 
         );
     }
@@ -44,7 +52,6 @@ export default class SizeMenu extends React.Component {
 
 const styles = StyleSheet.create({
    container: {
-       height: 50,
-       width: 300,
+       
    },
 });
