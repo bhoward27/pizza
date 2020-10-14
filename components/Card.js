@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, Platform, Image, StyleSheet, View } from 'react-native';
+import { TouchableOpacity, Platform, Image, StyleSheet } from 'react-native';
 
 import InfoRow from './InfoRow';
 

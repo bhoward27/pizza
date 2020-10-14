@@ -1,11 +1,8 @@
 import React from 'react';
-import { StyleSheet, View, ScrollView } from 'react-native';
+import { StyleSheet } from 'react-native';
 import Constants from 'expo-constants';
 
-import Card from './components/Card';
-import pepperoniImage from './assets/pepperoni.jpg';
-import hawaiianImage from './assets/hawaiian.jpg';
-import mediterraneanImage from './assets/mediterranean.jpg';
+import CardList from './screens/CardList';
 
 /*
   Displays three Cards, each of which shows a picture of a pizza, its name, and price.
@@ -13,40 +10,16 @@ import mediterraneanImage from './assets/mediterranean.jpg';
 */
 export default function App() {
   return (
-    <ScrollView style={styles.container}>
-      <Card
-        syle={styles.card}
-        image={hawaiianImage}
-        name="Hawaiian Pizza"
-        price="$15.99"
-      />
-      <Card
-        style={styles.card}
-        image={pepperoniImage}
-        name="Pepperoni Pizza"
-        price="$15.99" //price of a medium pizza.
-      />
-      <Card
-        syle={styles.card}
-        image={mediterraneanImage}
-        name="Mediterranean Pizza"
-        price="$18.99"
-      />
-    </ScrollView>
+    <CardList
+      style={styles.cardList}
+    />
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  cardList: {
     flex: 1,
     backgroundColor: 'white',
     marginTop: Constants.statusBarHeight,
-  },
-  card: {
-    backgroundColor: 'white',
-
-    //  This tells it how to distribute its CHILDREN along (in this case) the x-axis 
-    //  (secondary axis).
-    alignItems: 'center',
   },
 });
