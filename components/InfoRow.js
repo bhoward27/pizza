@@ -12,7 +12,7 @@ export default function InfoRow({ name, price }) {
                 {name}
             </Text>
             <Text style={styles.price} numberOfLines={1}>
-                {price}
+                {"$" + price}
             </Text>
         </View>
     );

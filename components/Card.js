@@ -1,27 +1,25 @@
 import React from 'react';
-import { TouchableOpacity, Platform, Image, StyleSheet, View } from 'react-native';
+import { TouchableOpacity, Platform, Image, StyleSheet } from 'react-native';
 
 import InfoRow from './InfoRow';
 
 /*
-    A Card has the name, image, and price of a pizza. UPDATE BEFORE MERGING.
+    A Card has the name, image, and price of a pizza (for medium size). When tapped, the Order 
+    screen appears for the selected pizza.
 */
-export default class Card extends React.Component {
-    render() {
-        const { style, image, name, price } = this.props;
-        return (
-            <TouchableOpacity style={style}>
-                <Image
-                    style={styles.image}
-                    source={image}
-                />
-                <InfoRow
-                    name={name}
-                    price={price}
-                />
-            </TouchableOpacity>
-        );
-    }
+export default function Card({ style, image, name, price, onPressCard }) {
+    return (
+        <TouchableOpacity style={style} onPress={onPressCard}>
+            <Image
+                style={styles.image}
+                source={image}
+            />
+            <InfoRow
+                name={name}
+                price={price}
+            />
+        </TouchableOpacity>
+    );
 }
 
 const styles = StyleSheet.create({
