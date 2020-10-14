@@ -8,26 +8,26 @@ import TotalRow from '../components/TotalRow';
 /*
     Class-level comment. UPDATE BEFORE MERGING.
 */
-export default class Order extends React.Component {
-    render() {
-        const { style, image, name, price, onPressClose } = this.props;
-        return (
-            <View style={style}>
-                <OrderHeader 
-                    image={image}
-                    name={name}
-                ></OrderHeader>
-                <SizeMenu mediumPrice={price} ></SizeMenu>
-                <TotalRow tax={0.12} subtotal={20.99}></TotalRow>
-                <Button
-                    style={styles.closeButton}
-                    onPress={onPressClose}
-                    title={"Close Window"}
-                    color={styles.closeButton.color}
-                />
-            </View>
-        );
-    }
+export default function Order({ style, image, name, size, price, onPressClose, onSizeSelection }) {
+    return (
+        <View style={style}>
+            <OrderHeader 
+                image={image}
+                name={name}
+            ></OrderHeader>
+            <SizeMenu 
+                mediumPrice={price}
+                onSizeSelection={onSizeSelection}
+            ></SizeMenu>
+            <TotalRow tax={0.12} subtotal={size}></TotalRow>
+            <Button
+                style={styles.closeButton}
+                onPress={onPressClose}
+                title={"Close Window"}
+                color={styles.closeButton.color}
+            />
+        </View>
+    );
 }
 
 const styles = StyleSheet.create({
@@ -36,6 +36,5 @@ const styles = StyleSheet.create({
     },
     closeButton: {
         color: 'red',
-        //justifyContent: 'flex-end',
     },
 });

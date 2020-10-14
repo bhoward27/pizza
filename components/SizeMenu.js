@@ -10,9 +10,14 @@ export default class SizeMenu extends React.Component {
         price: this.props.mediumPrice,
     };
     
+    onValueChange = (itemValue, onSizeSelection) => {
+        onSizeSelection(itemValue);
+        this.setState({ price: itemValue });
+    };
+
     render() {
         const { price } = this.state;
-        const { mediumPrice } = this.props;
+        const { mediumPrice, onSizeSelection } = this.props;
         const PRICE_DIFFERENCE = 2;
         const PRECISION = 2;
         const PRECISION_FACTOR = Math.pow(10, PRECISION);
@@ -27,9 +32,7 @@ export default class SizeMenu extends React.Component {
             <Picker
                 style={styles.container}
                 selectedValue={price}
-                
-                //  Need to pass this function down from app.
-                onValueChange={(itemValue, itemIndex) => this.setState({price: itemValue})}
+                onValueChange={(itemValue, itemIndex) => this.onValueChange(itemValue, onSizeSelection)}
             >
                 <Picker.Item
                     value={SMALL_PRICE}

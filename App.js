@@ -4,7 +4,6 @@ import Constants from 'expo-constants';
 
 import CardList from './screens/CardList';
 import Order from './screens/Order';
-import SizeMenu from './components/SizeMenu';
 
 /*
   Displays three Cards, each of which shows a picture of a pizza, its name, and price.
@@ -16,6 +15,7 @@ export default class App extends React.Component {
     selectedImage: null,
     selectedName: null,
     selectedPrice: null,
+    selectedSize: null,
   };
 
   openOrderScreen = (image, name, price) => {
@@ -24,19 +24,26 @@ export default class App extends React.Component {
       selectedImage: image,
       selectedName: name,
       selectedPrice: price,
+      selectedSize: price,
     });
   };
+
   closeOrderScreen = () => {
     this.setState({
       showModal: false,
       selectedImage: null,
       selectedName: null,
       selectedPrice: null,
+      selectedSize: null,
     });
   };
 
+  selectSize = (itemValue) => {
+    this.setState({selectedSize: itemValue})
+  };
+
   render() {
-    const { showModal, selectedImage, selectedName, selectedPrice } = this.state;
+    const { showModal, selectedImage, selectedName, selectedPrice, selectedSize } = this.state;
     return (
       <View style={styles.container}>
         <CardList
@@ -52,10 +59,12 @@ export default class App extends React.Component {
             name={selectedName}
             image={selectedImage}
             price={selectedPrice}
+            size={selectedSize}
+            onOpenOrder={this.initializeTotalRow}
             onPressClose={this.closeOrderScreen}
+            onSizeSelection={this.selectSize}
           ></Order>
         </Modal>
-        {/* <SizeMenu mediumPrice={9.99} ></SizeMenu> */}
       </View>
     );
   }
