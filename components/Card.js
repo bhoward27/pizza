@@ -4,7 +4,8 @@ import { TouchableOpacity, Platform, Image, StyleSheet } from 'react-native';
 import InfoRow from './InfoRow';
 
 /*
-    A Card has the name, image, and price of a pizza. UPDATE BEFORE MERGING.
+    A Card has the name, image, and price of a pizza (for medium size). When tapped, the Order 
+    screen appears for the selected pizza.
 */
 export default function Card({ style, image, name, price, onPressCard }) {
     return (

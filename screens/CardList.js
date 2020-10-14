@@ -7,8 +7,8 @@ import hawaiianImage from '../assets/hawaiian.jpg';
 import mediterraneanImage from '../assets/mediterranean.jpg';
 
 /*
-  Class-level comment
-  UPDATE BEFORE MERGING.
+  This is the first screen of the app, and it shows 3 Cards in a ScrollView for the following 
+  pizzas: Hawaiian, Pepperoni, and Mediterannean.
 */
 export default function CardList({ style, onPressCard }) {
     const HAWAIIAN_NAME = "Hawaiian Pizza";

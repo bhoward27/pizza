@@ -2,7 +2,8 @@ import React from 'react';
 import { Image, Text, View, StyleSheet } from 'react-native';
 
 /*
-    Class-level comment. UPDATE BEFORE MERGING.
+    This component appears at the top of the Order screen. It consists of cropped image of the 
+    pizza and text below that says which pizza it is.
 */
 export default function OrderHeader({ image, name }) {
     return (

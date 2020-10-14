@@ -2,7 +2,8 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
 /*
-    Class-level comment. UPDATE BEFORE MERGING.
+    This component appears beneath the SizeMenu and above the order button. It shows the
+    total after tax, given the selected pizza and size.
 */
 
 export default class TotalRow extends React.Component {

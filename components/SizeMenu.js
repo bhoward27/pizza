@@ -1,9 +1,10 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
 import { Picker } from '@react-native-community/picker';
 
 /*
-    Class-level comment. UPDATE BEFORE MERGING.
+    This appears below the OrderHeader and consists of a Picker with pizza size options for small, 
+    medium, and large. 
 */
 export default class SizeMenu extends React.Component {
     state = {
@@ -28,11 +29,11 @@ export default class SizeMenu extends React.Component {
         const SEPARATOR = " --- $";
 
         return (
-            <View style={styles.container}>
+            <View>
                 <Picker
-                    style={styles.container}
                     selectedValue={price}
-                    onValueChange={(itemValue, itemIndex) => this.onValueChange(itemValue, onSizeSelection)}
+                    onValueChange={(itemValue, itemIndex) => this.onValueChange(itemValue, 
+                                                                                onSizeSelection)}
                 >
                     <Picker.Item
                         value={SMALL_PRICE}
@@ -52,9 +53,3 @@ export default class SizeMenu extends React.Component {
         );
     }
 }
-
-const styles = StyleSheet.create({
-   container: {
-       
-   },
-});

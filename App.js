@@ -6,8 +6,9 @@ import CardList from './screens/CardList';
 import Order from './screens/Order';
 
 /*
-  Displays three Cards, each of which shows a picture of a pizza, its name, and price.
-  UPDATE BEFORE MERGING.
+  The app starts with the CardList screen, which shows a list of pizzas. Tapping on a pizza
+  opens the Order screen, where the user can choose the size of the pizza they want and then
+  place an order for delivery. This component manages all the logic between these screens.
 */
 export default class App extends React.Component {
   state = {
