@@ -37,9 +37,6 @@ export default class App extends React.Component {
   render() {
     const { showModal } = this.state;
     return (
-      // <CardList
-      //   style={styles.cardList} onPressCard={this.openOrderScreen}
-      // />
       <View style={styles.container}>
         <CardList
           style={styles.cardList} onPressCard={this.openOrderScreen}
@@ -48,7 +45,7 @@ export default class App extends React.Component {
           visible={showModal}
           animationType="slide"
         >
-          <Order></Order>
+          <Order style={styles.order}></Order>
         </Modal>
       </View>
     );
@@ -63,7 +60,10 @@ const styles = StyleSheet.create({
   },
   cardList: {
     flex: 1,
-    // backgroundColor: 'white',
-    // marginTop: Constants.statusBarHeight,
   },
+  order: {
+    backgroundColor: 'white',
+    flex: 1,
+    marginTop: Constants.statusBarHeight,
+},
 });

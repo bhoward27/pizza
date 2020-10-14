@@ -1,25 +1,34 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
-import Constants from 'expo-constants';
 
+import OrderHeader from '../components/OrderHeader';
+import pepperoniImage from '../assets/pepperoni.jpg';
+import hawaiianImage from '../assets/hawaiian.jpg';
+const HAWAIIAN_NAME = "Hawaiian Pizza";
+
+/*
+    Class-level comment. UPDATE BEFORE MERGING.
+*/
 export default class Order extends React.Component {
     render() {
+        // const { style, image, name } = this.props;
+        const { style } = this.props;
         return (
-            <View style={styles.container}>
-                <Text style={styles.text}>This is the order screen.</Text>
+            <View style={style}>
+                <OrderHeader 
+                    // image={image}
+                    // name={name}
+                    image={hawaiianImage}
+                    name={HAWAIIAN_NAME}
+                ></OrderHeader>
             </View>
         );
     }
 }
 
 const styles = StyleSheet.create({
-    container: {
-        backgroundColor: 'black',
-        flex: 1,
-        marginTop: Constants.statusBarHeight,
-    },
     text: {
-        color: 'white',
+        // color: 'white',
         flex: 1,
     },
 });

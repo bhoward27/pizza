@@ -40,7 +40,7 @@ export default function CardList({ style, onPressCard }) {
                 syle={styles.card}
                 image={mediterraneanImage}
                 name={MEDITERRANEAN_NAME}
-                price={PEPPERONI_PRICE}
+                price={MEDITERRANEAN_PRICE}
                 // onPressCard={() => onPressCard(mediterraneanImage, MEDITERRANEAN_NAME, 
                                                                         // MEDITERRANEAN_PRICE)}
                 onPressCard={onPressCard}
