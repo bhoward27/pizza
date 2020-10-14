@@ -10,32 +10,43 @@ import mediterraneanImage from '../assets/mediterranean.jpg';
   Class-level comment
   UPDATE BEFORE MERGING.
 */
-export default class CardList extends React.Component {
-    render() {
-        const { style } = this.props;
-        return (
-            <ScrollView style={style}>
-                <Card
-                    syle={styles.card}
-                    image={hawaiianImage}
-                    name="Hawaiian Pizza"
-                    price="$15.99"
-                />
-                <Card
-                    style={styles.card}
-                    image={pepperoniImage}
-                    name="Pepperoni Pizza"
-                    price="$15.99" //price of a medium pizza.
-                />
-                <Card
-                    syle={styles.card}
-                    image={mediterraneanImage}
-                    name="Mediterranean Pizza"
-                    price="$18.99"
-                />
-            </ScrollView>
-        );
-    }
+export default function CardList({ style, onPressCard }) {
+    const HAWAIIAN_NAME = "Hawaiian Pizza";
+    const HAWAIIAN_PRICE = 15.99;
+    const PEPPERONI_NAME = "Pepperoni Pizza";
+    const PEPPERONI_PRICE = 15.99;
+    const MEDITERRANEAN_NAME = "Mediterranean Pizza"
+    const MEDITERRANEAN_PRICE = 18.99;
+
+    return (
+        <ScrollView style={style}>
+            <Card
+                syle={styles.card}
+                image={hawaiianImage}
+                name={HAWAIIAN_NAME}
+                price={HAWAIIAN_PRICE}
+                // onPressCard={() => onPressCard(hawaiianImage, HAWAIIAN_NAME, HAWAIIAN_PRICE)}
+                onPressCard={onPressCard}
+            />
+            <Card
+                style={styles.card}
+                image={pepperoniImage}
+                name={PEPPERONI_NAME}
+                price={PEPPERONI_PRICE}
+                // onPressCard={() => onPressCard(pepperoniImage, PEPPERONI_NAME, PEPPERONI_PRICE)}
+                onPressCard={onPressCard}
+            />
+            <Card
+                syle={styles.card}
+                image={mediterraneanImage}
+                name={MEDITERRANEAN_NAME}
+                price={PEPPERONI_PRICE}
+                // onPressCard={() => onPressCard(mediterraneanImage, MEDITERRANEAN_NAME, 
+                                                                        // MEDITERRANEAN_PRICE)}
+                onPressCard={onPressCard}
+            />
+        </ScrollView>
+    );
 }
 
 const styles = StyleSheet.create({
