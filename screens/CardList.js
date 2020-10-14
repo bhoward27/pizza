@@ -25,25 +25,22 @@ export default function CardList({ style, onPressCard }) {
                 image={hawaiianImage}
                 name={HAWAIIAN_NAME}
                 price={HAWAIIAN_PRICE}
-                // onPressCard={() => onPressCard(hawaiianImage, HAWAIIAN_NAME, HAWAIIAN_PRICE)}
-                onPressCard={onPressCard}
+                onPressCard={() => onPressCard(hawaiianImage, HAWAIIAN_NAME, HAWAIIAN_PRICE)}
             />
             <Card
                 style={styles.card}
                 image={pepperoniImage}
                 name={PEPPERONI_NAME}
                 price={PEPPERONI_PRICE}
-                // onPressCard={() => onPressCard(pepperoniImage, PEPPERONI_NAME, PEPPERONI_PRICE)}
-                onPressCard={onPressCard}
+                onPressCard={() => onPressCard(pepperoniImage, PEPPERONI_NAME, PEPPERONI_PRICE)}
             />
             <Card
                 syle={styles.card}
                 image={mediterraneanImage}
                 name={MEDITERRANEAN_NAME}
                 price={MEDITERRANEAN_PRICE}
-                // onPressCard={() => onPressCard(mediterraneanImage, MEDITERRANEAN_NAME, 
-                                                                        // MEDITERRANEAN_PRICE)}
-                onPressCard={onPressCard}
+                onPressCard={() => onPressCard(mediterraneanImage, MEDITERRANEAN_NAME,
+                                                                        MEDITERRANEAN_PRICE)}
             />
         </ScrollView>
     );
@@ -52,9 +49,6 @@ export default function CardList({ style, onPressCard }) {
 const styles = StyleSheet.create({
   card: {
     backgroundColor: 'white',
-
-    //  This tells it how to distribute its CHILDREN along (in this case) the x-axis 
-    //  (secondary axis).
     alignItems: 'center',
   },
 });

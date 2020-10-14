@@ -4,38 +4,31 @@ import Constants from 'expo-constants';
 
 import CardList from './screens/CardList';
 import Order from './screens/Order';
+import SizeMenu from './components/SizeMenu';
 
 /*
   Displays three Cards, each of which shows a picture of a pizza, its name, and price.
   UPDATE BEFORE MERGING.
 */
 export default class App extends React.Component {
-  // state = {
-  //   showModal: false,
-  //   selectedImage: null,
-  //   selectedName: null,
-  //   selectedPrice: null,
-  // };
   state = {
     showModal: false,
+    selectedImage: null,
+    selectedName: null,
+    selectedPrice: null,
   };
 
-  // openOrderScreen = (image, name, price) => {
-  //   this.setState({
-  //     showModal: true,
-  //     selectedImage: image,
-  //     selectedName: name,
-  //     selectedPrice: price,
-  //   });
-  // }
-  openOrderScreen = () => {
+  openOrderScreen = (image, name, price) => {
     this.setState({
       showModal: true,
+      selectedImage: image,
+      selectedName: name,
+      selectedPrice: price,
     });
   }
 
   render() {
-    const { showModal } = this.state;
+    const { showModal, selectedImage, selectedName, selectedPrice } = this.state;
     return (
       <View style={styles.container}>
         <CardList
@@ -45,8 +38,14 @@ export default class App extends React.Component {
           visible={showModal}
           animationType="slide"
         >
-          <Order style={styles.order}></Order>
+          <Order 
+            style={styles.order}
+            name={selectedName}
+            image={selectedImage}
+            price={selectedPrice}
+          ></Order>
         </Modal>
+        {/* <SizeMenu mediumPrice={9.99} ></SizeMenu> */}
       </View>
     );
   }

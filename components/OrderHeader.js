@@ -19,18 +19,15 @@ export default function OrderHeader({ image, name }) {
 const styles = StyleSheet.create({
     container: {
         flex: 0,
-        //backgroundColor: 'green',
         alignItems: 'center',
     },
     image: {
         height: 100,
         width: 300,
         backgroundColor: 'grey',
-        //resizeMode: 'stretch',
     },
     text: {
         fontSize: 30,
         fontWeight: 'bold',
-        //textAlign: 'left',
     },
 });
