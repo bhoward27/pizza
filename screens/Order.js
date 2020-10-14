@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Button, Text } from 'react-native';
+import { View, StyleSheet, Button, Alert } from 'react-native';
 
 import OrderHeader from '../components/OrderHeader';
 import SizeMenu from '../components/SizeMenu';
@@ -18,8 +18,14 @@ export default function Order({ style, image, name, size, price, onPressClose, o
             <SizeMenu 
                 mediumPrice={price}
                 onSizeSelection={onSizeSelection}
-            ></SizeMenu>
-            <TotalRow tax={0.12} subtotal={size}></TotalRow>
+            />
+            <TotalRow tax={0.12} subtotal={size} />
+            <Button
+                style={styles.orderButton}
+                onPress={()=> Alert.alert("Delivery On the Way",
+                                "Thank you for your purchase.\nYour " + name + " is on the way!")}
+                title="ORDER"
+            />
             <Button
                 style={styles.closeButton}
                 onPress={onPressClose}
@@ -36,5 +42,8 @@ const styles = StyleSheet.create({
     },
     closeButton: {
         color: 'red',
+    },
+    orderButton: {
+
     },
 });

@@ -29,24 +29,24 @@ export default class SizeMenu extends React.Component {
 
         return (
             <View style={styles.container}>
-            <Picker
-                style={styles.container}
-                selectedValue={price}
-                onValueChange={(itemValue, itemIndex) => this.onValueChange(itemValue, onSizeSelection)}
-            >
-                <Picker.Item
-                    value={SMALL_PRICE}
-                    label={"Small" + SEPARATOR + SMALL_PRICE}
-                />
-                <Picker.Item
-                    label={"Medium" + SEPARATOR + mediumPrice}
-                    value={mediumPrice}
-                />
-                <Picker.Item
-                    label={"Large" + SEPARATOR + LARGE_PRICE}
-                    value={LARGE_PRICE}
-                />
-            </Picker>
+                <Picker
+                    style={styles.container}
+                    selectedValue={price}
+                    onValueChange={(itemValue, itemIndex) => this.onValueChange(itemValue, onSizeSelection)}
+                >
+                    <Picker.Item
+                        value={SMALL_PRICE}
+                        label={"Small" + SEPARATOR + SMALL_PRICE}
+                    />
+                    <Picker.Item
+                        label={"Medium" + SEPARATOR + mediumPrice}
+                        value={mediumPrice}
+                    />
+                    <Picker.Item
+                        label={"Large" + SEPARATOR + LARGE_PRICE}
+                        value={LARGE_PRICE}
+                    />
+                </Picker>
             </View>
 
         );

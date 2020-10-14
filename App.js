@@ -63,7 +63,7 @@ export default class App extends React.Component {
             onOpenOrder={this.initializeTotalRow}
             onPressClose={this.closeOrderScreen}
             onSizeSelection={this.selectSize}
-          ></Order>
+          />
         </Modal>
       </View>
     );
