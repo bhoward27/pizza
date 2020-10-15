@@ -61,7 +61,6 @@ export default class App extends React.Component {
             image={selectedImage}
             price={selectedPrice}
             size={selectedSize}
-            onOpenOrder={this.initializeTotalRow}
             onPressClose={this.closeOrderScreen}
             onSizeSelection={this.selectSize}
           />
@@ -84,5 +83,5 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     flex: 1,
     marginTop: Platform.OS === 'ios' ? Constants.statusBarHeight : 0,
-},
+  },
 });
