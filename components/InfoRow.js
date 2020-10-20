@@ -3,7 +3,7 @@ import { Text, View, StyleSheet } from 'react-native';
 
 /*
     An InfoRow is a row containing the name and price of a pizza, to be displayed below the image
-    on a Card. UPDATE BEFORE MERGING. 
+    on a Card.
 */
 export default function InfoRow({ name, price }) {
     return (
